@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <defs>
+    <!-- Ring Metallic Lavender Gradient -->
+    <linearGradient id="markRingGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#F3F0FA"/>
+      <stop offset="25%" stop-color="#D0BFFB"/>
+      <stop offset="55%" stop-color="#A78BFA"/>
+      <stop offset="85%" stop-color="#6747A1"/>
+      <stop offset="100%" stop-color="#191722"/>
+    </linearGradient>
+
+    <!-- Golden Orbit Gradient -->
+    <linearGradient id="markGoldOrbitGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A88236"/>
+      <stop offset="30%" stop-color="#D5B16D"/>
+      <stop offset="60%" stop-color="#FDF1D3"/>
+      <stop offset="100%" stop-color="#D5B16D"/>
+    </linearGradient>
+
+    <!-- Satellite Sphere 3D Radial Gradient -->
+    <radialGradient id="markSatGrad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#FCEFD0"/>
+      <stop offset="60%" stop-color="#D5B16D"/>
+      <stop offset="100%" stop-color="#805C1E"/>
+    </radialGradient>
+
+    <!-- Ambient Glow Filter -->
+    <filter id="markPurpleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="markStarGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Orbit Arc -->
+  <g transform="rotate(-28 100 100)">
+    <path d="M 32 100 A 68 18 0 0 1 168 100" stroke="url(#markGoldOrbitGrad)" stroke-width="2.5" stroke-opacity="0.45" fill="none"/>
+  </g>
+
+  <!-- Central Planet "O" Ring -->
+  <path d="M 100 48 C 128 48 148 70 148 100 C 148 130 128 152 100 152 C 72 152 52 130 52 100 C 52 70 72 48 100 48 Z M 100 66 C 81 66 69 82 69 100 C 69 118 81 134 100 134 C 119 134 131 118 131 100 C 131 82 119 66 100 66 Z" 
+        fill="url(#markRingGrad)" 
+        filter="url(#markPurpleGlow)"/>
+
+  <!-- Foreground Orbit Arc -->
+  <g transform="rotate(-28 100 100)">
+    <path d="M 168 100 A 68 18 0 0 1 32 100" stroke="url(#markGoldOrbitGrad)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+    <path d="M 168 100 A 68 18 0 0 1 70 114" stroke="#FFE7B0" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+  </g>
+
+  <!-- Satellite Orb on Top-Right -->
+  <g filter="url(#markPurpleGlow)">
+    <circle cx="152" cy="68" r="9.5" fill="#D5B16D" opacity="0.25"/>
+    <circle cx="152" cy="68" r="7.5" fill="url(#markSatGrad)"/>
+    <circle cx="150" cy="66" r="2.2" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+
+  <!-- Axis Crosshairs -->
+  <line x1="100" y1="62" x2="100" y2="138" stroke="#A78BFA" stroke-width="0.75" stroke-opacity="0.45"/>
+  <line x1="68" y1="100" x2="132" y2="100" stroke="#A78BFA" stroke-width="0.75" stroke-opacity="0.45"/>
+
+  <!-- Center Starburst -->
+  <g filter="url(#markStarGlow)">
+    <path d="M 100 86 Q 100 100 114 100 Q 100 100 100 114 Q 100 100 86 100 Q 100 100 100 86 Z" fill="#F3F0FA"/>
+    <circle cx="100" cy="100" r="1.8" fill="#FFFFFF"/>
+  </g>
+</svg>
